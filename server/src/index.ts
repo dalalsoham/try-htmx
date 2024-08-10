@@ -9,13 +9,12 @@ app.get('/', (c) => {
     html`<!doctype html>
       <script src="https://unpkg.com/htmx.org@2.0.1"></script>
       <button hx-post='/clicked' hx-swap="outerHTML">Click Me</button>
-
     `,
   );
 });
 
 app.post("/clicked", (c) => {
-  return c.text("Hello Hono!!, you clicked this button");
+  return c.html("Hello <b>Hono!!</b>, you clicked this button");
 });
 
 const port = 3000
